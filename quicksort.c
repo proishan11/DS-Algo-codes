@@ -1,5 +1,5 @@
 #include<stdio.h>
-void print_arr(int a[], int r){
+void print_arr(int a[], int r){               //print each element of array
     for(int i=0; i<=r; i++){
         printf("%d\n",a[i]);
     }
@@ -22,13 +22,13 @@ int partition(int a[], int p, int r){
         }
     }
     swap(&a[i+1],&a[r]);
-    return i+1;
+    return i+1;                                 
 }
 
 void quicksort(int a[], int p, int r){
     if(p<r){
         int q = partition(a,p,r);
-        quicksort(a,p,q-1);
+        quicksort(a,p,q-1);               //recursively sort the arrays around pivot q.
         quicksort(a,q+1,r);
     }
 }
